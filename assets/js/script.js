@@ -1,7 +1,7 @@
 // Avance lección 1
 /*
 - prompt para pedir al usuario un dato
-- alert: para mostrar un mensaje al usuario
+- alert: para mostrar un mensaje al usuario!
 
 */
 
