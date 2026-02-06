@@ -57,4 +57,41 @@ function calcular() {
   }
 }
 
+//Lección 4
+// Artistas de Lollapalooza que me gustan
+
+const artistas = [
+  { nombre: "Sabrina Carpenter", genero: "femenino", dia: "viernes" },
+  { nombre: "Chappell Roan", genero: "femenino", dia: "domingo" },
+  { nombre: "Katseye", genero: "femenino", dia: "sabado" },
+  { nombre: "Lewis Capaldi", genero: "masculino", dia: "domingo" },
+  { nombre: "Marina", genero: "femenino", dia: "domingo" },
+  { nombre: "Addison Rae", genero: "femenino", dia: "domingo" },
+];
+
+// Cantidad de artistas femeninas
+
+let cantFem = 0;
+for (let i = 0; i < artistas.length; i++) {
+  if (artistas[i].genero === "femenino") {
+    cantFem = cantFem + 1;
+  }
+}
+console.log(`La cantidad de artistas femeninas es: ${cantFem}`);
+
+// Cantidad de artistas masculinos
+let cantMasc = 0;
+let j = 0;
+while (j < artistas.length) {
+  if (artistas[j].genero === "masculino") {
+    cantMasc = cantMasc + 1;
+  }
+  j++;
+}
+console.log(`La cantidad de artistas masculinos es: ${cantMasc}`);
+
+// Cantidad de artistas que tocan el Domingo
+let artistasDom = artistas.filter((artista) => artista.dia === "domingo");
+console.log(`Los artistas que tocan el Domingo son: ${artistasDom.length}`);
+
 // alert("¡Gracias por usar nuestra aplicación, hasta luego!");
