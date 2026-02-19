@@ -24,29 +24,30 @@ calcular();
 function calcular() {
   switch (operacion) {
     case "sumar":
-      resultado = num1 + num2;
-      console.log(`El resultado de ${num1} + ${num2} es ${resultado}`);
-      texto.textContent = `El resultado de ${num1} + ${num2} es ${resultado}`;
+      console.log(`El resultado de ${num1} + ${num2} es ${sumar(num1, num2)}`);
+      texto.textContent = `El resultado de ${num1} + ${num2} es ${sumar(num1, num2)}`;
+
       break;
     case "restar":
-      resultado = num1 - num2;
-      console.log(`El resultado de ${num1} - ${num2} es ${resultado}`);
-      texto.textContent = `El resultado de ${num1} - ${num2} es ${resultado}`;
+      console.log(`El resultado de ${num1} - ${num2} es ${restar(num1, num2)}`);
+      texto.textContent = `El resultado de ${num1} - ${num2} es ${restar(num1, num2)}`;
       break;
     case "dividir":
       if (num2 !== 0) {
-        resultado = num1 / num2;
-        console.log(`El resultado de ${num1} / ${num2} es ${resultado}`);
-        texto.textContent = `El resultado de ${num1} / ${num2} es ${resultado}`;
+        console.log(
+          `El resultado de ${num1} / ${num2} es ${dividir(num1, num2)}`,
+        );
+        texto.textContent = `El resultado de ${num1} / ${num2} es ${dividir(num1, num2)}`;
       } else {
-        console.log("No se puede dividir por 0");
+        console.warn("No se puede dividir por 0");
         texto.textContent = `No se puede dividir por 0`;
       }
       break;
     case "multiplicar":
-      resultado = num1 * num2;
-      console.log(`El resultado de ${num1} * ${num2} es ${resultado}`);
-      texto.textContent = `El resultado de ${num1} * ${num2} es ${resultado}`;
+      console.log(
+        `El resultado de ${num1} * ${num2} es ${multiplicar(num1, num2)}`,
+      );
+      texto.textContent = `El resultado de ${num1} * ${num2} es ${multiplicar(num1, num2)}`;
       break;
     default:
       console.log(
@@ -57,7 +58,26 @@ function calcular() {
   }
 }
 
-//Lección 4
+//Lección 4: funciones para cada operación matemática
+function sumar(a, b) {
+  return a + b;
+}
+
+function restar(a, b) {
+  return a - b;
+}
+
+function dividir(a, b) {
+  if (b !== 0) {
+    return a / b;
+  }
+}
+
+function multiplicar(a, b) {
+  return a * b;
+}
+
+//Lección 3
 // Artistas de Lollapalooza que me gustan
 
 const artistas = [
@@ -92,6 +112,11 @@ console.log(`La cantidad de artistas masculinos es: ${cantMasc}`);
 
 // Cantidad de artistas que tocan el Domingo
 let artistasDom = artistas.filter((artista) => artista.dia === "domingo");
-console.log(`Los artistas que tocan el Domingo son: ${artistasDom.length}`);
+console.log(
+  `La cantidad de artistas que tocan el Domingo son: ${artistasDom.length}`,
+);
 
 // alert("¡Gracias por usar nuestra aplicación, hasta luego!");
+
+// Cómo saber si un elemento es un array o un objeto?
+console.log(Array.isArray(artistas)); // true
