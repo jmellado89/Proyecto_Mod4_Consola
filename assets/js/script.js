@@ -10,16 +10,15 @@ console.log(
   "color:white; font-size: 13px; background-color: purple; padding: 5px;",
 );
 
-// const texto = document.getElementById("mostrar");
-// let nombre = prompt("Por favor, ingresa tu nombre:");
-// let num1 = parseInt(prompt(`Hola ${nombre}, por favor ingresa un número: `));
-// let num2 = parseInt(prompt("Ahora ingresa otro número: "));
-// let operacion = prompt(
-//   "Qué deseas hacer con estos dos números? (Sumar, restar, dividir, multiplicar",
-// ).toLowerCase();
-// let resultado;
+const texto = document.getElementById("mostrar");
+let nombre = prompt("Por favor, ingresa tu nombre:");
+let num1 = parseInt(prompt(`Hola ${nombre}, por favor ingresa un número: `));
+let num2 = parseInt(prompt("Ahora ingresa otro número: "));
+let operacion = prompt(
+  "Qué deseas hacer con estos dos números? (Sumar, restar, dividir, multiplicar",
+).toLowerCase();
 
-// calcular();
+calcular();
 
 function calcular() {
   switch (operacion) {
@@ -100,6 +99,7 @@ for (let i = 0; i < artistas.length; i++) {
 console.log(`La cantidad de artistas femeninas es: ${cantFem}`);
 
 // Cantidad de artistas masculinos
+
 let cantMasc = 0;
 let j = 0;
 while (j < artistas.length) {
@@ -111,14 +111,13 @@ while (j < artistas.length) {
 console.log(`\nLa cantidad de artistas masculinos es: ${cantMasc}`);
 
 // Cantidad de artistas que tocan el Domingo
+
 let artistasDom = artistas.filter((artista) => artista.dia === "domingo");
 console.log(
   `\nLa cantidad de artistas que tocan el Domingo son: ${artistasDom.length}`,
 );
 
-// alert("¡Gracias por usar nuestra aplicación, hasta luego!");
-
-// Leccion 5: Crear objeto con métodos
+// Leccion 5: Crear objeto con métodos, con artistas de Lollapalooza
 
 const artistaFavorito = {
   nombre: "Sabrina",
@@ -138,12 +137,17 @@ const artistaFavorito = {
   },
 };
 
+// Se muestra info de artista favorito:
 console.log(artistaFavorito.mostrarInfo());
+
+// Se suman fans al artista:
 console.log(artistaFavorito.sumarFans(500000));
 
+// Se usa forEach para mostrar qué artistas tocan el domingo:
 console.log("\nLista de artistas del día Domingo:");
 artistasDom.forEach((artista) => console.log(`- ${artista.nombre}`));
 
+// Se usa map para crear nuevo arreglo con artistas que tocan en Lolla2026
 const artistas26 = artistas.map((artista) => {
   artista.festival = "Lollapalooza";
   artista.year = 2026;
@@ -155,11 +159,13 @@ artistas26.forEach((artista, indice) => {
   console.log(`${indice + 1}. ${artista}`);
 });
 
+// Se añaden nuevos artistas al arreglo original
 artistas.push(
   { nombre: "Florence and the Machine", festival: "Lollapalooza", year: 2016 },
   { nombre: "Sam Smith", festival: "Lollapalooza", year: 2019 },
 );
 
+// Se crea nuevo arreglo con artistas de años anteriores usando filter()
 const artistasPast = artistas.filter((artista) => artista.year !== 2026);
 console.log("\nAlgunos de los mejores artista de otros años:");
 artistasPast.forEach((artista) => console.log(`- ${artista.nombre}`));
